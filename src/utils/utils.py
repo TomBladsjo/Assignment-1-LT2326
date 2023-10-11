@@ -134,7 +134,7 @@ class EarlyStopping:
                 self.early_stop = True
         else:
             self.best_score = score
-            self.save_checkpoint(val_loss, state)
+            self.save_checkpoint(val_loss, state) 
             self.counter = 0
 
     def save_checkpoint(self, val_loss, state):
@@ -286,6 +286,7 @@ class OCRLabelConverter(object):
                 if char in self.dict:
                     index = self.dict[char]
                 else:
+                    print(f'Label converter: character {char} not in alphabet!')
                     index = 0
                 result.append(index)
 
